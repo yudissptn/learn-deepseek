@@ -5,11 +5,11 @@ from dummy_documents import documents
 # Initialize ChromaDB
 client = chromadb.PersistentClient(path="rag_db")  # Stores DB locally
 sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="all-MiniLM-L6-v2"  # Lightweight embedding model
+    model_name="sentence-transformers/paraphrase-multilingual-mpnet-base-v2"  # Multilingual embedding model
 )
 
 # Check if the collection exists, otherwise create it
-collection_name = "business_knowledge1"
+collection_name = "business_knowledge2"
 if collection_name in [col.name for col in client.list_collections()]:
     collection = client.get_collection(name=collection_name)
 else:

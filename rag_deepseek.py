@@ -20,7 +20,7 @@ def generate_response(user_query):
     system_prompt = f"""
     Answer the user's question based ONLY on this context:
     {context}
-    If unsure, say 'I don't know.'
+    If unsure, say 'I don't know.'. You need to start the conversation with a greeting and then answer the question.
     """
     
     # Call DeepSeek

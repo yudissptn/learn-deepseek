@@ -4,3 +4,4 @@ chromadb>=0.4.0
 sentence-transformers>=2.2.0
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch>=2.0.0
+twilio==9.5.2

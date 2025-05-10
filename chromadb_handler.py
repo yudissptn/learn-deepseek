@@ -2,10 +2,19 @@ import chromadb
 from chromadb.utils import embedding_functions
 from dummy_documents import documents
 
-# Initialize ChromaDB
-client = chromadb.PersistentClient(path="rag_db")  # Stores DB locally
+import os
+from chromadb.config import Settings
+
+# Define the DB path (works on Render)
+chroma_path = os.path.join(os.getcwd(), "rag_db")
+
+client = chromadb.PersistentClient(
+    path=chroma_path,
+    settings=Settings(allow_reset=True)  # Allows overwriting
+)
+
 sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="sentence-transformers/paraphrase-multilingual-mpnet-base-v2"  # Multilingual embedding model
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
 # Check if the collection exists, otherwise create it

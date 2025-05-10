@@ -14,7 +14,7 @@ client = chromadb.PersistentClient(
 )
 
 sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+    model_name="all-MiniLM-L6-v2"
 )
 
 # Check if the collection exists, otherwise create it

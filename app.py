@@ -1,4 +1,5 @@
 import twilio
+import os
 from flask import Flask, request, jsonify
 from rag_deepseek import generate_response  # Your RAG-DeepSeek function
 
@@ -20,4 +21,5 @@ def whatsapp_webhook(): # Twilio sends data as form-data, not JSON
     return str(twiml)  # Return TwiML to Twilio
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    port = int(os.environ.get("PORT", 8080))  # Use Render's $PORT or default to 8080
+    app.run(host="0.0.0.0", port=port)  # Critical for Render compatibility

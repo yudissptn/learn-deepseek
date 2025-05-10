@@ -1,6 +1,6 @@
 documents = [
-    "Our return policy allows refunds within 30 days.",
-    "Business hours are 9 AM to 6 PM, Monday to Friday.",
-    "Contact support@example.com for urgent queries.",
+    "Returns: 30-day refund",  # Short, dense sentences
+    "Support: support@example.com",
+    "Hours: 9AM-6PM",
     # Add more entries...
 ]
